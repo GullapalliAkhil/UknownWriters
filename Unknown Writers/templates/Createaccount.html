@@ -1,0 +1,270 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create Account</title>
+
+	<link href="{% static 'style.css' %}" rel="stylesheet">
+
+	<script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
+
+</head>
+<body>
+
+	<div class="totalpage">
+
+	     <div class="Logoside">
+
+	      	   <img class="imgclass" src="{% static 'L1.png' %}" alt="Logo" width="800" style="width:350px;height:250px; margin-left:300px; margin-top: 250px;"  \>
+	      	           	   	
+	      </div>
+
+	      	           	   
+
+	</div>
+
+        <div class="signup_Form">
+
+		      <style>
+	      	        input[type=text]{
+
+	                   width: 110% ;
+
+	                   border:2px solid #3b9bf5;
+ 
+	                   border-radius:4px;
+
+	                   outline: none;
+
+                       padding: 10px;
+
+                       margin-top:-90px;
+
+                       box-sizing:border-box;
+                                            
+                       margin-left:-90px;
+
+                       letter-spacing:.50px;
+
+                       border-right: transparent;
+
+                       border-top: transparent;
+
+                       border-left: transparent;
+
+                      }
+
+
+
+                    input[type=text]:focus{
+
+	                    border-color: #66b3ff;
+
+	                    box-shadow: 0 0 8px 0 #66b3ff;
+                                        
+                    }
+
+                    input[type=password]{
+
+	                   width: 110% ;
+
+	                   border:2px solid #3b9bf5;
+ 
+	                   border-radius:4px;
+
+	                   outline: none;
+
+                       padding: 10px;
+
+                       margin-top:-90px;
+
+                       box-sizing:border-box;
+                                            
+                       margin-left:-90px;
+
+                       letter-spacing:.50px;
+
+                       border-right: transparent;
+
+                       border-top: transparent;
+
+                       border-left: transparent;
+
+                      }
+
+                      
+
+                    input[type=password]:focus{
+
+	                    border-color: #66b3ff;
+
+	                    box-shadow: 0 0 8px 0 #66b3ff;
+                                        
+                    }
+
+
+                    button[type=submit]{
+
+                                        	
+                        border: transparent;
+
+                       /* border-right: transparent;
+
+                        border-top: transparent;
+
+                        border-left: transparent;
+
+                        border-bottom: transparent;*/
+
+                        padding: 8px 20px;                	
+
+                        box-sizing:20px;                	
+
+                        margin-left:-90px;                	
+
+                        letter-spacing: .50px;                	
+
+                        font-size: 17px;
+                	
+                        color:#3b9bf5;                	
+
+                        cursor: pointer;
+                	
+                        margin-top: 25px; 
+
+                        margin-bottom: -30px;              	;
+
+                        /*background-color:#3b9bf5; */
+                        background: transparent;
+
+                        font-family: sans-serif;
+
+                        text-align: center;
+
+                	}
+
+                	h5[class=Signuptext_fields]{
+
+                		color: #3b9bf5;
+
+                		font-weight: normal;
+
+                		font-family:sans-serif;
+
+                		font-size: 18px;
+
+                		margin-top: 4px;
+
+                		margin-left: -90px;
+                	}
+
+                    ::placeholder {
+                                 
+                         color:#bfbfbf;
+                                  
+                         opacity: 1; /* Firefox */
+
+                         font-family: sans-serif;
+
+                         font-size: 15px;
+
+                         font-style: all;
+
+                     }
+
+                    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                                     
+                             color: #bfbfbf;
+
+                             font-family: sans-serif;
+
+                             font-size:15px;
+
+                     }
+
+                    ::-ms-input-placeholder { /* Microsoft Edge */
+                                           
+                             color: #bfbfbf;
+
+                             font-family: sans-serif;
+
+                             font-size: 15px;
+
+                             font-style: Gretosque sans-serif;
+
+                       }
+
+                       input
+         </style>
+         <form id="signup_form_2" method="POST" action="/login/">
+
+          {% csrf_token %}
+
+            <div class="createAccount" style="margin-top: 25px; margin-left: -110px;">
+             <h3 class="Signuptext" style="font-size: 25px; font-weight: normal;">Create account</h3>
+            </div>
+            
+            <div class="signupform_values">
+              
+                 <div class="Username_field_1" style="margin-top:10px;">
+
+		               <h5 class="Signuptext_fields"text="Username" >Username:</h5>
+                
+                 </div>
+                 <div class="Username_field_2" style="margin-top:-10px;">
+		     
+		                <input class="cursor" type="text" placeholder=" Username" name="uname"><br>
+                   
+                   </div>
+
+                 <div class="Email_field_1" style="margin-top:10px;">
+		          
+		                <h5 class="Signuptext_fields" text="Email">Email:</h5>
+
+                   </div>
+		       
+		             <div class="Email_field_2"style="margin-top:-10px;"">
+
+		                <input class="cursor"type="text" placeholder=" Example@outlook.com"name="Email"><br>
+
+		                </div>
+               
+                 <div class="pwd_field_1" style="margin-top:10px;">
+
+                    <h5 class="Signuptext_fields" text="Password">Password:</h5>
+
+                 </div>
+                 <div class="pwd_field_2" style="margin-top:-10px;">
+
+                    <input class="cursor"type="password" placeholder=" Password" name="password"  ><br>
+                 
+                 </div>
+                 <div class="cpwd_field_1"style="margin-top:10px;">
+
+                  <h5 class="Signuptext_fields" text="Confirm Password">Confirm Password:</h5>
+
+                 </div>
+               
+                 <div class="cpwd_field_2"style="margin-top:-10px;">
+
+                    <input class="cursor"type="password" placeholder=" Confirm Password" name="cpname" ><br>
+                    
+                  </div>
+
+                 <div class="passerrors"style="color:green; background-color: background-color:#f5d20a; margin-left: -90px;">
+
+                    <h7 id="errors"></h7>
+                    
+                 </div>
+                 <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()" type="submit" ><b>Create</b></button>
+            </div>
+
+          </form>
+
+        </div> 
+
+                                       
+
+</body>
+</html>

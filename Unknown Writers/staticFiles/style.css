@@ -1,0 +1,103 @@
+.leftside, .rightside{
+
+	height:50vh;
+	width: 100%;
+}
+
+@media screen and (min-width:768px)
+{
+	.leftside, .rightside{
+
+		height: 100vh;
+	}
+}
+
+.leftside{
+
+	background-color:white;
+
+}
+
+.rightside{
+
+	background-color:white;
+}
+
+.login_username_paswordcontainer{
+
+	margin: 10px 30px 20px 80px;
+
+	
+
+	padding-top:-100px;
+
+
+}
+
+.signup_Form{
+
+	margin-top: -410px;
+
+	margin-left:850px ;
+
+	margin-right:200px;
+
+	margin-bottom: 300px;
+
+
+	/*background-color: #c6e2ff;*/
+
+	border: 1px solid #3b9bf5;
+
+	font-weight: normal;
+
+	padding-right: 20px;
+
+	padding-top: -5px;
+
+	padding-left: 160px;
+
+	padding-bottom: 50px;
+
+	box-shadow: 0 0 6px 0 #3b9bf5;
+
+                                       
+
+}
+
+
+.Signuptext{
+
+	font-size: 25px;
+
+	font-family: sans-serif;
+
+	color: #3b9bf5;
+
+	margin-left: 120px;
+
+	margin-top: 20px;
+
+}
+
+.cursor{
+
+	caret-color:#3b9bf5;
+
+	margin: 8px 0;
+
+}
+
+.signup_form_2[type=text]{
+
+	 letter-spacing: .50px;
+	 margin-top:-8px;
+    border-right: transparent;
+     border-top: transparent;
+     border-left: transparent;
+}
+
+
+
+
+

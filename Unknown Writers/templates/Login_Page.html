@@ -1,0 +1,186 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+   <title background="#3b9bf5">Unknown writers</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <link href="{% static 'style.css' %}" rel="stylesheet">
+
+   <script type = "text/javascript" src = "{% static 'Login_page.js' %}" ></script>
+
+
+</head>
+
+<body>
+
+          
+	      <div class="row no-gutters">
+
+
+	      	           <div class="col-md-6 no-gutters" >
+	      	           	
+	      	           	   <div class="leftside">
+
+	      	           	       <img class="imgclass" src="{% static 'L1.png' %}" alt="Logo" width="800" style="width:350px;height:250px; margin-left:300px; margin-top: 200px;"  \>
+
+	      	           	       <h5 style="text-align: center; margin-left:165px">A Open Source Project</h5>
+	      	           	   	
+	      	           	   </div>
+
+	      	           	   
+
+
+	      	           </div>
+
+	      	           <div class="col-md-6 no-gutters">
+	      	           	
+	      	           	   <div class="rightside">
+	      	           	   	
+	      	           	   	   <div class="Login_Form_conatiner" >
+
+	      	           	   	   	    <style>
+	      	           	   	   	    	input[type=text]{
+
+	                                        width: 60% ;
+
+	                                        border:2px solid #3b9bf5;
+ 
+	                                        border-radius:4px;
+ 
+	                                        margin: 8px 0;
+
+	                                        outline: none;
+
+                                            padding: 8px;
+
+                                            box-sizing:border-box;
+                                            
+                                            margin-left: 20px;
+
+                                            border-right: transparent;
+
+                                            border-left: transparent;
+
+                                            border-top: transparent;
+
+
+                                         }
+                                        input[type=text]:focus{
+
+	                                       border-color: #66b3ff;
+
+	                                       box-shadow: 0 0 8px 0 #66b3ff;
+                                        }
+                                        button[text=Login]{
+
+                                        	
+                                        	border: 2px solid #3b9bf5;
+
+                                        	padding: 9px 20px;
+
+                                        	box-sizing:20px;
+
+                                        	margin-left: 20px;
+
+                                        	letter-spacing: .50px;
+
+                                        	font-size: 17px;
+
+                                        	color:white;
+
+                                        	cursor: pointer;
+
+
+
+
+
+
+                                        }
+                                        button[id=Signup]{
+
+                                        	/*border: 2px solid #3b9bf5;*/
+
+
+                                         }	
+                                        	
+                                        ::placeholder {
+                                          color:#bfbfbf;
+                                          opacity: 2; /* Firefox */
+
+                                         }
+
+                                        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                                            color: #bfbfbf;
+                                         }
+
+                                        ::-ms-input-placeholder { /* Microsoft Edge */
+                                           color: #bfbfbf;
+                                        }
+                                    </style>
+
+                                     <img style="width: 100px; height: 100px; margin-left: 240px; margin-top:80px; border-radius: 50%;" src="{% static 'Login_Logo.png' %}" alt="Loginlogo" \>
+                                     <h4 style="margin-left:236px; color: #3b9bf5; font-size: 25px; font-family:sans-serif; ">Login Here</h4>
+
+                                     <form name="Loginform" id="Login_form" method="GET"onsubmit="return Validation()">
+
+                                        <div class="login_username_paswordcontainer">
+
+                                          <h5 text="Username" style="color: #3b9bf5;font-weight: normal;font-family:sans-serif;">Username:</h5>
+                                          <input   class="cursor" type="text" placeholder ="Username" name="username" style="letter-spacing: .50px"><br>
+
+                                          <h5 text="Password" style="color: #3b9bf5; font-weight: normal;font-family:sans-serif;">
+                                          Password:</h5>
+                                          <input   class="cursor" type="text" placeholder="Password"name="Password" style="letter-spacing: .50px" ><br>
+                                          
+                                          </div>
+
+                                        <div  class ="space_errors"style="color:white; background-color:#f5d20a;  margin-left:100px; margin-top:20px; margin-right: 280px;text-align: center; font-weight: bold; box-sizing:20px; letter-spacing: .25px; font-size: 17px;">
+
+                                          <h7 id="errors" ></h7> 
+                                          </div>
+
+                                         <div class="create_signup_login_conatiner" style="margin-left: 79px; margin-top:-35px;">
+
+                                          <button id="Login" type="submit" value="submit" text="Login" style="margin-top: 50px; background-color:#3b9bf5;
+                                              font-family: sans-serif;"><b>Login</b></button>
+
+                                          <button id="Signup"  onmouseover="mouseover()" onmouseout="mouseout()"text="Signup" style="
+                                            border: transparent;
+
+                                        	box-sizing:18px;
+
+                                        	margin-left: 150px;
+
+                                        	letter-spacing: .50px;
+
+                                        	font-size: 17px;
+
+                                        	color:#3b9bf5;
+
+                                        	font-weight: bold;
+
+                                        	cursor: pointer;
+
+                                            background: transparent;"
+                                        	 ><a  style="text-decoration: none;color:#3b9bf5;padding: 11px 20px;"id="Signup1" href="http://127.0.0.1:8000/signup/">Create account</a></button>
+                                          
+                                        </div>
+
+                                    </form>
+                                 </div>
+
+	      	           	   </div>
+	      	           	   
+	      	           </div>
+
+
+
+</body>
+
+</html.
