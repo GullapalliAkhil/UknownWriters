@@ -7,7 +7,8 @@
 
 	<link href="{% static 'style.css' %}" rel="stylesheet">
 
-	<script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
+   <script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
+   
 
 </head>
 <body>
@@ -197,13 +198,13 @@
 
                        input
          </style>
-         <form id="signup_form_2" method="POST" action="/login/">
+         <form id="signup_form_2" method="POST" action="/login/" onsubmit="return passwordfieldvalidation()">
 
           {% csrf_token %}
 
             <div class="createAccount" style="margin-top: 25px; margin-left: -110px;">
              <h3 class="Signuptext" style="font-size: 25px; font-weight: normal;">Create account</h3>
-            </div>
+             </div>
             
             <div class="signupform_values">
               
@@ -224,21 +225,21 @@
 
                    </div>
 		       
-		             <div class="Email_field_2"style="margin-top:-10px;"">
+		             <div class="Email_field_2"style="margin-top:-10px;">
 
 		                <input class="cursor"type="text" placeholder=" Example@outlook.com"name="Email"><br>
 
 		                </div>
                
-                 <div class="pwd_field_1" style="margin-top:10px;">
+                 <div  class="pwd_field_1" style="margin-top:10px;">
 
                     <h5 class="Signuptext_fields" text="Password">Password:</h5>
 
-                 </div>
+                   </div>
                  <div class="pwd_field_2" style="margin-top:-10px;">
 
-                    <input class="cursor"type="password" placeholder=" Password" name="password"  ><br>
-                 
+                    <input id="pwd_1" class="cursor" type="password" placeholder=" Password" name="password" value=""  ><br>
+                    
                  </div>
                  <div class="cpwd_field_1"style="margin-top:10px;">
 
@@ -246,13 +247,13 @@
 
                  </div>
                
-                 <div class="cpwd_field_2"style="margin-top:-10px;">
+                 <div  class="cpwd_field_2"style="margin-top:-10px;">
 
-                    <input class="cursor"type="password" placeholder=" Confirm Password" name="cpname" ><br>
+                    <input id="pwd_2" class="cursor"type="password" placeholder=" Confirm Password" name="cpname" value=""><br>
                     
                   </div>
 
-                 <div class="passerrors"style="color:green; background-color: background-color:#f5d20a; margin-left: -90px;">
+                 <div class="passerrors" width="500px" style="color:white; background-color:#f5d20a; margin-left:-92px;margin-right:50px;font-weight: bold; box-sizing:20px; letter-spacing: .25px; padding:-2px;font-size: 17px; font-family: sans-serif; text-align: center;" width="100" >
 
                     <h7 id="errors"></h7>
                     
