@@ -199,7 +199,7 @@
 
                        input
          </style>
-         <form id="signup_form_2" method="POST" action="/login/" onsubmit="return passwordfieldvalidation()">
+         <form id="signup_form_2" method="POST" action="/login/"  onsubmit="return passwordfieldvalidation()">
 
           {% csrf_token %}
 
@@ -216,7 +216,7 @@
                  </div>
                  <div class="Username_field_2" style="margin-top:-10px;">
 		     
-		                <input class="cursor" type="text" placeholder=" Username" name="uname"><br>
+		                <input id="name1"class="cursor"  value="" type="text" placeholder=" Username" name="uname" ><br>
                    
                    </div>
 
@@ -228,7 +228,7 @@
 		       
 		             <div class="Email_field_2"style="margin-top:-10px;">
 
-		                <input class="cursor"type="text" placeholder=" Example@outlook.com"name="Email"><br>
+		                <input id="Email" class="cursor"type="text" placeholder=" Example@outlook.com" name="Email" required><br>
 
 		                </div>
                
@@ -240,7 +240,7 @@
                  <div class="pwd_field_2" style="margin-top:-10px;">
 
                     <input id="pwd_1" class="cursor" type="password" placeholder=" Password" name="password" value=""  ><br>
-                    
+                     
                  </div>
                  <div class="cpwd_field_1"style="margin-top:10px;">
 
