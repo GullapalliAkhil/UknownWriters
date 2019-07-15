@@ -18,8 +18,26 @@ function mouseout(){
   
 }
 function passwordfieldvalidation() {
+
+  var name=document.getElementById("name1").value;
   var x = document.getElementById("pwd_1").value;
   var y =document.getElementById("pwd_2").value;
+
+  if(name.length>16){
+
+    document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
+  
+    return false;
+    
+    }
+  if(name.length<5){
+  
+    document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
+  
+    return false;
+    
+    }
+  
   
   if (x == "") {
     document.getElementById("errors").innerHTML="   *Password field cannot be NULL.";
@@ -34,21 +52,21 @@ function passwordfieldvalidation() {
    }
 if(x !=y){
 
-  document.getElementById("errors").innerHTML="*Password and Confirm Password fields should match.";
+  document.getElementById("errors").innerHTML="*Password and Confirm Password fields must match.";
 
   return false;
   
    }
 if(x>14){
 
-  document.getElementById("errors").innerHTML="Password characters should be between 5 and 14.";
+  document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
 
   return false;
   
   }
 if(x<5){
 
-  document.getElementById("errors").innerHTML="Password characters should be between 5 and 14.";
+  document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
 
   return false;
   
