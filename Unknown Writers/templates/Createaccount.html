@@ -1,7 +1,7 @@
 {% load static from staticfiles %}
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Create Account</title>
 
@@ -9,23 +9,22 @@
 
    <script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
    
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+          
 
 </head>
-<body>
+<body style="background-color: lightblue;">
 
-	<div class="totalpage">
-
-	     <div class="Logoside">
-
-	      	   <img class="imgclass" src="{% static 'L1.png' %}" alt="Logo" width="800" style="width:350px;height:250px; margin-left:300px; margin-top: 250px;"  \>
-	      	           	   	
-	      </div>
-
-	      	           	   
-
-	</div>
-
-        <div class="signup_Form">
+<div style="background-color: lightblue;">
+     <div class="Speakout" style="margin-top:70px;margin-right:90px; height:75vh; margin-left: 100px;color:white;
+            background-color:  lightblue;font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size: 60px; padding-left:200px; text-emphasis-color:lightblue;  padding-bottom: 30px; ">
+             <h1 style="margin-top:30px">Speak</h1>
+             <h1>out</h1>
+             <h1>now !</h1>
+        </div>
+      <div class="signup_Form" style="background-color:white; border-radius:15px;border:1px solid #3b9bf5;">
 
 		      <style>
 	      	        input[type=text]{
@@ -118,7 +117,7 @@
 
                         border-bottom: transparent;*/
 
-                        padding: 8px 20px;                	
+                        padding: 8px 30px;                	
 
                         box-sizing:20px;                	
 
@@ -139,9 +138,11 @@
                         /*background-color:#3b9bf5; */
                         background: transparent;
 
-                        font-family: sans-serif;
+                        font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
 
                         text-align: center;
+
+                        border-radius:22px;
 
                 	}
 
@@ -151,7 +152,7 @@
 
                 		font-weight: normal;
 
-                		font-family:sans-serif;
+                		font-family:'Segoe UI', 'Roboto', arial, sans-serif;
 
                 		font-size: 18px;
 
@@ -166,11 +167,11 @@
                                   
                          opacity: 1; /* Firefox */
 
-                         font-family: sans-serif;
+                         font-family:'Segoe UI', 'Roboto', arial, sans-serif; 
 
                          font-size: 15px;
 
-                         font-style: all;
+                         font-style:'Segoe UI', 'Roboto', arial, sans-serif;
 
                      }
 
@@ -178,7 +179,7 @@
                                      
                              color: #bfbfbf;
 
-                             font-family: sans-serif;
+                             font-family: 'Segoe UI', 'Roboto', arial, sans-serif; 
 
                              font-size:15px;
 
@@ -188,11 +189,11 @@
                                            
                              color: #bfbfbf;
 
-                             font-family: sans-serif;
+                             font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
 
                              font-size: 15px;
 
-                             font-style: Gretosque sans-serif;
+                             font-style: 'Segoe UI', 'Roboto', arial, sans-serif;
 
                        }
 
@@ -202,8 +203,8 @@
 
           {% csrf_token %}
 
-            <div class="createAccount" style="margin-top: 25px; margin-left: -110px;">
-             <h3 class="Signuptext" style="font-size: 25px; font-weight: normal;">Create account</h3>
+            <div class="createAccount" style="font-family: 'Segoe UI', 'Roboto', arial, sans-serif;margin-top: 25px; margin-left: -105px;">
+             <h3 class="Signuptext" style="font-size: 25px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;font-weight:bold; ">Create account</h3>
              </div>
             
             <div class="signupform_values">
@@ -253,17 +254,18 @@
                     
                   </div>
 
-                 <div class="passerrors" width="500px" style="color:white; background-color:#f5d20a; margin-left:-92px;margin-right:50px;font-weight: bold; box-sizing:20px; letter-spacing: .25px; padding:-2px;font-size: 17px; font-family: sans-serif; text-align: center;" width="100" >
+                 <div class="passerrors" width="500px" style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; color:white; background-color:#f5d20a; border-radius:7px; margin-left:-92px;margin-right:50px;font-weight:bold; box-sizing:20px; letter-spacing: .25px; padding:-2px;font-size: 14px; text-align: center;" width="100" >
 
                     <h7 id="errors"></h7>
                     
                  </div>
-                 <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()" type="submit" ><b>Create</b></button>
+                 <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()" type="submit" style="letter-spacing: .50px" ><b>Create</b></button>
             </div>
 
           </form>
 
-        </div> 
+        </div>
+   </div>
 
                                        
 
