@@ -1,3 +1,4 @@
+
 function mouseover(){
   
   ele=document.getElementById("Create");
@@ -23,54 +24,52 @@ function passwordfieldvalidation() {
   var x = document.getElementById("pwd_1").value;
   var y =document.getElementById("pwd_2").value;
 
-  if(name.length>16){
+  
+  if(name==" "){
+
+    document.getElementById("errors").innerHTML="   *Username field cannot be NULL.";
+
+		return false;
+
+  }
+  if(name.length>16  ){
 
     document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
   
     return false;
     
     }
-  if(name.length<5){
-  
-    document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
-  
-    return false;
+    if( name.length<5 ){
+
+      document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
     
+      return false;
     }
-  
-  
-  if (x == "") {
-    document.getElementById("errors").innerHTML="   *Password field cannot be NULL.";
-
-		return false;
-   }
-  if(y == ""){
-    document.getElementById("errors").innerHTML="*Confirm Password field cannot be NULL.";
-
-		return false;
-  
-   }
-if(x !=y){
+    if(x !=y){
 
   document.getElementById("errors").innerHTML="*Password and Confirm Password fields must match.";
 
   return false;
   
    }
-if(x>14){
+   if(x>14  ){
 
   document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
 
   return false;
   
   }
-if(x<5){
+  if( x<5 ){
 
-  document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
-
-  return false;
+    document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
   
-  }
+    return false;
+    
+    }
 
+  else{
+
+  swal('Thanks for joining with us','You are redirecting to the login page.','success');
 }
 
+}

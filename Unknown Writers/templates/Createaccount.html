@@ -10,16 +10,21 @@
    <script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
    
    <meta charset="UTF-8">
+
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-          
+
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 </head>
-<body style="background-color: lightblue;">
+<body style="background-color:#43abc9">
 
-<div style="background-color: lightblue;">
+<div style="background-color: #43abc9">
      <div class="Speakout" style="margin-top:70px;margin-right:90px; height:75vh; margin-left: 100px;color:white;
-            background-color:  lightblue;font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size: 60px; padding-left:200px; text-emphasis-color:lightblue;  padding-bottom: 30px; ">
+            background-color: #43abc9;font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size: 60px; padding-left:200px; text-emphasis-color:lightblue;  padding-bottom: 30px; ">
              <h1 style="margin-top:30px">Speak</h1>
              <h1>out</h1>
              <h1>now !</h1>
@@ -199,7 +204,7 @@
 
                        input
          </style>
-         <form id="signup_form_2" method="POST" action="/login/"  onsubmit="return passwordfieldvalidation()">
+         <form id="signup_form_2" method="POST" action="/login/"  onsubmit="return passwordfieldvalidation()" onsubmit="prompt()">
 
           {% csrf_token %}
 
@@ -228,7 +233,7 @@
 		       
 		             <div class="Email_field_2"style="margin-top:-10px;">
 
-		                <input id="Email" class="cursor"type="text" placeholder=" Example@outlook.com" name="Email" required><br>
+		                <input id="Email" class="cursor"type="text" placeholder=" Example@outlook.com" name="Email"><br>
 
 		                </div>
                
@@ -259,7 +264,9 @@
                     <h7 id="errors"></h7>
                     
                  </div>
-                 <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()" type="submit" style="letter-spacing: .50px" ><b>Create</b></button>
+                 <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()"  type="submit" style="letter-spacing: .50px" ><b>Create</b></button>
+
+                
             </div>
 
           </form>
