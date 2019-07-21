@@ -38,9 +38,9 @@
 
 	      	           </div>
 
-	      	           <div class="col-md-6 no-gutters"style="background-color: lightblue; opacity:0.5px;">
+	      	           <div class="col-md-6 no-gutters"style="background-color: #43abc9; opacity:0.5px;">
 	      	           	
-	      	           	   <div class="rightside" style="background-color: lightblue;">
+	      	           	   <div class="rightside" style="background-color:#43abc9">
 	      	           	   	
 	      	           	   	   <div class="Login_Form_conatiner" style="background-color:white; width: 500px; height: 600px; margin-left:150px;
                                         margin-top: 80px;margin-bottom:1600px;margin-bottom:80px; border-radius: 15px; border:px solid #3b9bf5; ">
@@ -177,7 +177,9 @@
                                      <img style="width: 100px; height: 100px; margin-left: 190px; margin-top:70px; border-radius: 50%;" src="{% static 'Login_Logo.png' %}" alt="Loginlogo" \>
                                      <h4 style="margin-left:185px; color: #3b9bf5; font-size: 25px; font-family:'Segoe UI', 'Roboto', arial, sans-serif; ">Login Here</h4>
 
-                                     <form name="Loginform" id="Login_form" method="GET"onsubmit="return Validation()">
+                                     <form name="Loginform" id="Login_form" action="/HomePage/" method="POST" onsubmit="return Validation()">
+
+                                        {% csrf_token %}
 
                                         <div class="login_username_paswordcontainer">
 
@@ -195,12 +197,13 @@
                                         
                                         <div  class ="space_errors"style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; color:white; background-color:#f5d20a; border-radius:7px;  margin-left:70px; margin-top:-5px; margin-right: 80px;text-align: center; font-weight:bold; box-sizing:20px; letter-spacing: .25px; font-size:14px;">
 
-                                            <h7 id="errors" ></h7> 
+                                            <h7 id="errors" ></h7>
+                                            
                                           </div>
 
                                          <div class="create_signup_login_conatiner" style="margin-left: 79px; margin-top:-35px;">
 
-                                          <button id="Login" type="submit" value="submit" text="Login" style="margin-top:50px;margin-left:-10px; background-color:#3b9bf5;
+                                          <button id="Login"  type="submit" value="submit" text="Login" style="margin-top:50px;margin-left:-10px; background-color:#3b9bf5;
                                               font-family:'Segoe UI', 'Roboto', arial, sans-serif; border-radius:22px; border: white;"><b>Login</b></button>
 
                                           <button id="Signup"  onmouseover="mouseover()" onmouseout="mouseout()"text="Signup" style="

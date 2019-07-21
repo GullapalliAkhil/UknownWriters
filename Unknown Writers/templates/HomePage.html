@@ -1,0 +1,93 @@
+<!DOCTYPE htlml>
+<html>
+  <head>
+     <title>Unknown Writers</title>
+  </head>
+  <body class='wholebody'>
+      
+       <div class='top-container' style="font-size:35px;overflow:visible;font-weight:bold; background-color:#3b9bf5; height:60px;color:white">
+          <h4 style="padding-bottom:15px;  padding-left:12px;">Unknown Writers</h1>
+        </div>
+       <div class='left-plane' style="border:2px solid #3b9bf5;overflow-y:hidden;background-color:white; height:95vh; width:348px;margin-top:2px">
+           <form action='/logout/' method="POST">{% csrf_token %}
+
+            <button type='submit' style="font-size:14px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border:transparent;margin-top:630px; margin-left:130px; background-color:white;letter-spacing:0.50px;color:#3b9bf5; font-weight:normal;cursor: pointer;">Log out</button>
+                
+         
+           </form>
+      
+        
+      
+      </div>
+       <div class='Right-plane'style="border:2px solid #3b9bf5;border-top:transparent;background-color:whitesmoke;border-bottom:transparent;border-right:transparent;overflow:scroll;overflow-x:hidden;background-color:white;height:91vh;margin-top:-722px;margin-left:350px;">
+             <div class='content'>
+                <form class="thoughts-form" action='/add/'method="POST">{% csrf_token %}
+                   <textarea id='content' name='message' style="
+            font-family: 'Segoe UI', 'Roboto', arial, sans-serif;font-weight:bold; border-radius:10px;border:2px solid #3b9bf5;font-size:16px;margin-left:100px;margin-top:30px;width:1000px;height:140px;padding-top:0px;"type='text'placeholder="Type your thoughts here."></textarea></br>
+                   <button type='submit' style="font-size:17px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border-radius:10px;letter-spacing:0.50px; background-color:#3b9bf5;color:white; font-weight:bold;padding: 6px 20px;border:2px solid #3b9bf5;cursor: pointer;margin-left:910px;margin-top:25px">Let other's know</button>
+                </form>
+            </div>  
+
+             <div>
+                {% for content in all_data %}
+               <div style="margin-left:100px;word-break: break-word;overflow:auto; height:40px; padding: 15px;margin-top: 30px; border-radius:4px; font-family:'Segoe UI', 'Roboto', arial, sans-serif;border:2px solid #3b9bf5;margin-right:140px; font-size: 14px;">{{content.user_thoughts}}</div>
+               {% endfor %}
+             <div>
+               
+  
+      </div>
+           
+       <Style>
+         body[class='wholebody']{
+         font-family:'Segoe UI', 'Roboto', arial, sans-serif;
+         font-size:14;
+         margin:0px;
+         padding:0px;
+         overflow:hidden;
+         }
+         ::-webkit-scrollbar {
+           width: 8px;
+           cursor: pointer;
+            }
+
+         /* Track */
+        ::-webkit-scrollbar-track {
+         box-shadow: inset 0 0 5px #3b9bf5; 
+         border-radius: 4px;
+         cursor: pointer;
+            }
+ 
+       /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #3b9bf5; 
+        border-radius: 4px;
+        cursor: pointer;
+         }
+
+        /* Handle on hover */
+       ::-webkit-scrollbar-thumb:hover {
+         background:#3b9bf5;
+         cursor:pointer;
+        }
+         ::placeholder {
+             color:#bfbfbf;
+             opacity: 1; /* Firefox */
+             font-family:'Segoe UI', 'Roboto', arial, sans-serif;        
+             font-size: 15px;
+             font-style:'Segoe UI', 'Roboto', arial, sans-serif;
+          }
+                         
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #bfbfbf;
+            font-family: 'Segoe UI', 'Roboto', arial, sans-serif; 
+            font-size:20px;
+              }
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: #bfbfbf;
+            font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+            font-size: 20px;
+            font-style: 'Segoe UI', 'Roboto', arial, sans-serif;
+            } 
+      </Style.
+  </body>
+</html>

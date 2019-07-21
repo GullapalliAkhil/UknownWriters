@@ -15,19 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from login.views import loginview
-from signup.views import signupview
-from signup.views import newPage
+from  signup.views import loginview1, signupview, newPage, user_login,userthoughts,user_logout
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('',loginview ),
+    path('', loginview1 ),
 
     path('signup/',signupview),
 
     path('login/' , newPage),
+
+    path('HomePage/', user_login),
+
+    path('add/', userthoughts),
+
+    path('logout/', user_logout),
+
+    
 
 ]
 
