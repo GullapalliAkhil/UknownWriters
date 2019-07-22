@@ -1,5 +1,5 @@
 
-<img src="images/New_Logo.png" width="450" />
+<img src="images/New_Logo.png" width="1400" />
  <div style="color:blue;">
    <h1>UNKNOWN WRITERS</h1>
  </div> 
