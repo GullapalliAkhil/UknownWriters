@@ -5,15 +5,17 @@
   </head>
   <body class='wholebody'>
       
-       <div class='top-container' style="font-size:35px;overflow:visible;font-weight:bold; background-color:#3b9bf5; height:60px;color:white">
-          <h4 style="padding-bottom:15px;  padding-left:12px;">Unknown Writers</h1>
+       <div class='top-container' style="font-size:25px;overflow:visible; background-color:#3b9bf5; height:60px;color:white">
+          <h4 style="padding-bottom:8px;padding-top:10px;  padding-left:12px;">Unknown Writers</h1>
         </div>
        <div class='left-plane' style="border:2px solid #3b9bf5;overflow-y:hidden;background-color:white; height:95vh; width:348px;margin-top:2px">
-           <form action='/logout/' method="POST">{% csrf_token %}
-
-            <button type='submit' style="font-size:14px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border:transparent;margin-top:630px; margin-left:130px; background-color:white;letter-spacing:0.50px;color:#3b9bf5; font-weight:normal;cursor: pointer;">Log out</button>
-                
+           
+          <div class="username_display" style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size:25px; margin-top:350px;margin-left: 60px;">{{username}}</div>
          
+          <form action='/logout/' method="POST">{% csrf_token %}
+
+            <button type='submit' style="font-size:14px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border:transparent;margin-top:250px; margin-left:130px; background-color:white;letter-spacing:0.50px;color:#3b9bf5; font-weight:normal;cursor: pointer;">Log out</button>
+                
            </form>
       
         

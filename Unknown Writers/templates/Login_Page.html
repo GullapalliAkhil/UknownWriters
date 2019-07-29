@@ -12,12 +12,14 @@
 
    <link href="{% static 'style.css' %}" rel="stylesheet">
 
-   <script type = "text/javascript" src = "{% static 'Login_page.js' %}" ></script>
+   <script type = "text/javascript" src = "{% static 'Login_page.js' %}" >
+  
+   </script>
 
 
 </head>
 
-<body>
+<body style="overflow:hidden">
 
           
 	      <div class="row no-gutters">
@@ -27,9 +29,9 @@
 	      	           	
 	      	           	   <div class="leftside">
 
-	      	           	       <img class="imgclass" src="{% static 'L1.png' %}" alt="Logo" width="800" style="width:350px;height:250px; margin-left:300px; margin-top: 200px;"  \>
+	      	           	       <img class="imgclass" src="https://raw.githubusercontent.com/GullapalliAkhil/UknownWriters/master/images/New_Logo.png" alt="Logo" style="margin-top:-20px;margin-right: 850px; width:1800px;margin-left:-480px;" \>
 
-	      	           	       <h5 style="text-align: center; margin-left:165px">A Open Source Project</h5>
+	      	           	       <h5 style="text-align: center; margin-top:-200px;margin-left:70px">A Open Source Project</h5>
 	      	           	   	
 	      	           	   </div>
 
@@ -112,9 +114,6 @@
                                         }
                                         button[text=Login]{
 
-                                        	
-                                        	
-
                                         	padding: 8px 30px;
 
                                         	box-sizing:10px;
@@ -129,18 +128,7 @@
 
                                         	cursor: pointer;
 
-
-
-
-
-
                                         }
-                                        button[id=Signup]{
-
-                                        	/*border: 2px solid #3b9bf5;*/
-
-
-                                         }	
                                         	
                                         ::placeholder {
                                           color:#bfbfbf;
@@ -177,7 +165,7 @@
                                      <img style="width: 100px; height: 100px; margin-left: 190px; margin-top:70px; border-radius: 50%;" src="{% static 'Login_Logo.png' %}" alt="Loginlogo" \>
                                      <h4 style="margin-left:185px; color: #3b9bf5; font-size: 25px; font-family:'Segoe UI', 'Roboto', arial, sans-serif; ">Login Here</h4>
 
-                                     <form name="Loginform" id="Login_form" action="/HomePage/" method="POST" onsubmit="return Validation()">
+                                     <form name="Loginform" id="Login_form" action="/HomePage/" method="POST" ">
 
                                         {% csrf_token %}
 
@@ -185,19 +173,19 @@
 
                                           <h5 text="Username" style="color: #3b9bf5;font-weight: normal; margin-top: 20px; margin-left:-10px;font-family:'Segoe UI', 'Roboto', arial, sans-serif;
                                         ;">Username:</h5>
-                                          <input   class="cursor" type="text" placeholder ="Username" name="username" style="letter-spacing: .50px"><br>
+                                          <input   class="cursor" id='username' type="text" placeholder ="Username" name="username" style="letter-spacing: .50px"><br>
 
                                           <h5 text="Password" style="color: #3b9bf5;  margin-left:-10px;font-weight: normal; margin-top:15px;font-family:'Segoe UI', 'Roboto', arial, sans-serif;
                                         ">
                                           Password:</h5>
-                                          <input   class="cursor" type="password" placeholder="Password"name="Password" style="letter-spacing: .50px; margin-top:8px;" ><br>
+                                          <input   class="cursor" id='password' type="password" placeholder="Password"name="Password" style="letter-spacing: .50px; margin-top:8px;" ><br>
                                           
                                           </div>
 
                                         
                                         <div  class ="space_errors"style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; color:white; background-color:#f5d20a; border-radius:7px;  margin-left:70px; margin-top:-5px; margin-right: 80px;text-align: center; font-weight:bold; box-sizing:20px; letter-spacing: .25px; font-size:14px;">
 
-                                            <h7 id="errors" ></h7>
+                                            <h7 id="errors" >{{error}}</h7>
                                             
                                           </div>
 

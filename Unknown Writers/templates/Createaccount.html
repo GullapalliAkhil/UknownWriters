@@ -7,13 +7,9 @@
 
 	<link href="{% static 'style.css' %}" rel="stylesheet">
 
-   <script type = "text/javascript" src = "{% static 'createAccount.js' %}" ></script>
-   
-   <meta charset="UTF-8">
+   <script type = "text/javascript" src = "{% static 'createAccount.js' %}" >
 
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </script>
 
    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" rel="stylesheet" />
 
@@ -27,7 +23,7 @@
             background-color: #43abc9;font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size: 60px; padding-left:200px; text-emphasis-color:lightblue;  padding-bottom: 30px; ">
              <h1 style="margin-top:30px">Speak</h1>
              <h1>out</h1>
-             <h1>now !</h1>
+             <h1>now.</h1>
         </div>
       <div class="signup_Form" style="background-color:white; border-radius:15px;border:1px solid #3b9bf5;">
 
@@ -261,7 +257,7 @@
 
                  <div class="passerrors" width="500px" style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; color:white; background-color:#f5d20a; border-radius:7px; margin-left:-92px;margin-right:50px;font-weight:bold; box-sizing:20px; letter-spacing: .25px; padding:-2px;font-size: 14px; text-align: center;" width="100" >
 
-                    <h7 id="errors"></h7>
+                    <h7 id="errors">{{error}}</h7>
                     
                  </div>
                  <button id="Create" onmouseover="mouseover()" onmouseout="mouseout()"  type="submit" style="letter-spacing: .50px" ><b>Create</b></button>
