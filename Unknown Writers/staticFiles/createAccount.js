@@ -27,41 +27,41 @@ function passwordfieldvalidation() {
   
   if(name==" "){
 
-    document.getElementById("errors").innerHTML="   *Username field cannot be NULL.";
+    document.getElementById("errors").innerHTML=" Username field cannot be NULL.";
 
 		return false;
 
   }
   if(name.length>16  ){
 
-    document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
+    document.getElementById("errors").innerHTML="Username characters must be between 5 and 25.";
   
     return false;
     
     }
     if( name.length<5 ){
 
-      document.getElementById("errors").innerHTML="*Username characters must be between 5 and 16.";
+      document.getElementById("errors").innerHTML="Username characters must be between 5 and 25.";
     
       return false;
     }
     if(x !=y){
 
-  document.getElementById("errors").innerHTML="*Password and Confirm Password fields must match.";
+  document.getElementById("errors").innerHTML="Password and Confirm Password fields must match.";
 
   return false;
   
    }
    if(x>14  ){
 
-  document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
+  document.getElementById("errors").innerHTML="Password characters must be between 5 and 14.";
 
   return false;
   
   }
   if( x<5 ){
 
-    document.getElementById("errors").innerHTML="*Password characters must be between 5 and 14.";
+    document.getElementById("errors").innerHTML="Password characters must be between 5 and 14.";
   
     return false;
     

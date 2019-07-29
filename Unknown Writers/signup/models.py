@@ -4,7 +4,7 @@ from django.db import models
 
 class signupform(models.Model):
 
-    Name=models.CharField(max_length=16)
+    Name=models.CharField(max_length=25)
 
     Email=models.CharField(max_length=40)
 
