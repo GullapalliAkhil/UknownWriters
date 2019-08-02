@@ -19,21 +19,21 @@ def signupview(request):
 
 def newPage(request):
 
-    name=request.POST.get("uname")
+    name = request.POST.get("uname")
+ 
+    emailid = request.POST.get("Email")
 
-    emailid=request.POST.get("Email")
-
-    password=request.POST.get("password")
+    password = request.POST.get("password")
        
-    if signupform.objects.filter(Name=name).exists():
+    if signupform.objects.filter(Name = name).exists():
         
-       Error="Another user with this username already exists." 
+       Error = "Another user with this username already exists." 
 
        return render(request, 'Createaccount.html',{'error':Error})
        
     else:
 
-       data1 =signupform(Name =name ,Email=emailid, Password =password)
+       data1 = signupform(Name =name ,Email=emailid, Password =password)
 
        data1.save()
 
@@ -57,11 +57,11 @@ def user_login(request):
 
     if request.method == 'POST':
  
-       username=request.POST.get('username')
+       username = request.POST.get('username')
 
-       password=request.POST.get('Password')
+       password = request.POST.get('Password')
 
-       if len(username)==0 and len(password)==0:
+       if len(username) == 0 and len(password) == 0:
 
          Error="Username or Password fields cannot be empty."
 
@@ -82,27 +82,27 @@ def user_login(request):
        else:
          
          try:
-            Data=signupform.objects.get(Name=username)
+            Data=signupform.objects.get(Name = username)
        
-            if Data.Password==password:
+            if Data.Password == password:
          
-             all_content=thoughtspost.objects.all()
+             all_content = thoughtspost.objects.all()
 
-             request.session['username']=username
+             #request.session['username'] = username
 
-             request.session.set_expiry(300)
+             #request.session.set_expiry(300)
        
              return render(request,'HomePage.html',{'all_data':all_content,'username':username })
          
             else:
              
-             Error="Password is incorrect."
+             Error = "Password is incorrect."
 
              return render(request,'Login_Page.html',{'error':Error}) 
   
          except:
            
-           Error="Username does not exist."
+           Error = "Username does not exist."
 
            return render(request,'Login_Page.html',{'error':Error})  
     else:
@@ -114,13 +114,13 @@ def user_login(request):
 # ##    
 def userthoughts(request):
     
-    comments=request.POST.get('message')
+    comments = request.POST.get('message')
     
-    data=thoughtspost(user_thoughts=comments)
+    data = thoughtspost(user_thoughts = comments)
 
     data.save()
 
-    all_content=thoughtspost.objects.all()
+    all_content = thoughtspost.objects.all()
 
     return render(request,'HomePage.html',{'all_data':all_content})
     
