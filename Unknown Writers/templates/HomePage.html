@@ -1,95 +1,163 @@
+{% load static from staticfiles %}
+
 <!DOCTYPE htlml>
 <html>
-  <head>
-     <title>Unknown Writers</title>
-  </head>
-  <body class='wholebody'>
-      
-       <div class='top-container' style="font-size:25px;overflow:visible; background-color:#3b9bf5; height:60px;color:white">
-          <h4 style="padding-bottom:8px;padding-top:10px;  padding-left:12px;">Unknown Writers</h1>
-        </div>
-       <div class='left-plane' style="border:2px solid #3b9bf5;overflow-y:hidden;background-color:white; height:95vh; width:348px;margin-top:2px">
-           
-          <div class="username_display" style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size:25px; margin-top:350px;margin-left: 60px;">{{username}}</div>
-         
-          <form action='/logout/' method="POST">{% csrf_token %}
 
-            <button type='submit' style="font-size:14px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border:transparent;margin-top:250px; margin-left:130px; background-color:white;letter-spacing:0.50px;color:#3b9bf5; font-weight:normal;cursor: pointer;">Log out</button>
-                
-           </form>
-      
-        
-      
+<head>
+   <title>Unknown Writers</title>
+
+   <script type="text/javascript" src="{% static 'Login_page.js' %}"></script>
+   <script type="text/javascript" src="{% static 'Home_page.js' %}"></script>
+   <script type="text/javascript" src="{% static 'Logout_page.js' %}"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="sessionstorage()" class='wholebody'>
+
+   <div class='top-container'
+      style="font-size:25px;overflow:visible; background-color:#3b9bf5; height:60px;color:white">
+      <h4 style="padding-bottom:8px;padding-top:10px;  padding-left:12px;">Unknown Writers</h1>
+   </div>
+   <div class='left-plane'
+      style="border:transparent;overflow-y:hidden;background-color:whitesmoke; height:95vh; width:408px;margin-top:2px; margin-left:20px;">
+      <div>
+         <div class="avatar-preview"
+            style="width: 300px;height:300px; margin-top:30px; margin-left:6px;  position: relative;border-radius: 100%;border: 6px solid #F8F8F8; box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);">
+            <input style="display:none" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+            <label
+               style="display: inline-block; margin-left:250px; margin-top: 230px;width: 34px;height: 34px;border-radius: 100%;background: #FFFFFF;border: 1px solid transparent; box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);cursor: pointer;font-weight: normal;transition: all .2s ease-in-out;"
+               for="imageUpload"></label>
+         </div>
       </div>
-       <div class='Right-plane'style="border:2px solid #3b9bf5;border-top:transparent;background-color:whitesmoke;border-bottom:transparent;border-right:transparent;overflow:scroll;overflow-x:hidden;background-color:white;height:91vh;margin-top:-722px;margin-left:350px;">
-             <div class='content'>
-                <form class="thoughts-form" action='/add/'method="POST">{% csrf_token %}
-                   <textarea id='content' name='message' style="
-            font-family: 'Segoe UI', 'Roboto', arial, sans-serif;font-weight:bold; border-radius:10px;border:2px solid #3b9bf5;font-size:16px;margin-left:100px;margin-top:30px;width:1000px;height:140px;padding-top:0px;"type='text'placeholder="Type your thoughts here."></textarea></br>
-                   <button type='submit' style="font-size:17px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border-radius:10px;letter-spacing:0.50px; background-color:#3b9bf5;color:white; font-weight:bold;padding: 6px 20px;border:2px solid #3b9bf5;cursor: pointer;margin-left:910px;margin-top:25px">Let other's know</button>
-                </form>
-            </div>  
+      <div class="username_display"
+         style="font-family:'Segoe UI', 'Roboto', arial, sans-serif; font-size:25px; margin-top:20px;margin-left: 80px;">
+         {{username}}</div>
 
-             <div>
-                {% for content in all_data %}
-               <div style="margin-left:100px;word-break: break-word;overflow:auto; height:40px; padding: 15px;margin-top: 30px; border-radius:4px; font-family:'Segoe UI', 'Roboto', arial, sans-serif;border:2px solid #3b9bf5;margin-right:140px; font-size: 14px;">{{content.user_thoughts}}</div>
-               {% endfor %}
-             <div>
-               
-  
+      <form action='/logout/' method="POST">{% csrf_token %}
+
+         <button onclick="logout()" type='submit'
+            style="font-size:14px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border:transparent;margin-top:250px; margin-left:130px; background-color:#3b9bf5;letter-spacing:0.50px;color:white;border-radius: 10px; font-weight:normal;cursor: pointer;">Log
+            out</button>
+
+      </form>
+
+
+
+   </div>
+   <div class='Right-plane'
+      style="border:transparent;background-color:whitesmoke;overflow:scroll;overflow-x:hidden;background-color:white;height:91vh;margin-top:-722px;margin-left:350px;">
+      <div class='content'>
+         <form class="thoughts-form" action='/add/' method="POST">{% csrf_token %}
+            <textarea id='content' name='message'
+               style="
+            font-family: 'Segoe UI', 'Roboto', arial, sans-serif;font-weight:bold; border-radius:10px;border:2px solid #3b9bf5;font-size:16px;margin-left:100px;margin-top:30px;width:1000px;height:140px;padding-top:0px;"
+               type='text' placeholder="Type your thoughts here."></textarea></br>
+            <button type='submit'
+               style="font-size:17px; font-family: 'Segoe UI', 'Roboto', arial, sans-serif;border-radius:10px;letter-spacing:0.50px; background-color:#3b9bf5;color:white; font-weight:bold;padding: 6px 20px;border:2px solid #3b9bf5;cursor: pointer;margin-left:910px;margin-top:25px">Let
+               other's know</button>
+         </form>
       </div>
-           
-       <Style>
-         body[class='wholebody']{
-         font-family:'Segoe UI', 'Roboto', arial, sans-serif;
-         font-size:14;
-         margin:0px;
-         padding:0px;
-         overflow:hidden;
-         }
-         ::-webkit-scrollbar {
-           width: 8px;
-           cursor: pointer;
-            }
 
-         /* Track */
-        ::-webkit-scrollbar-track {
-         box-shadow: inset 0 0 5px #3b9bf5; 
+      <div>
+         {% for content in all_data %}
+         <div>
+            <div
+               style="margin-left:100px;margin-top:40px;border-radius:4px;margin-right:140px; background: whitesmoke; height:128px;">
+               <img src="{% static 'Avatar.png' %}" alt='Avatar'
+                  style="margin-left:4px;background:whitesmoke; width:20px;border-radius: 100px;margin-top:8px;" />
+               <div style="margin-left:30px;margin-top:-15px; padding-bottom :4px; font-size: 10px;">
+                  <span>
+                     Anonymous
+                     letting you know</span></div>
+               <div id="content_userdata"
+                  style="background:white;margin-left:10px;word-break: break-word;overflow:auto; height:40px; padding: 15px;border-radius:8px; font-family:'Segoe UI', 'Roboto', arial, sans-serif;margin-right:10px; font-size: 14px;">
+                  {{content.user_thoughts}}</div>
+            </div>
+            <button onclick="display()"
+               style="font-size:14px;margin-left:1010px; margin-top:5px;font-family: 'Segoe UI', 'Roboto', arial, sans-serif;padding:5px;border:none;background-color:#3b9bf5; color:white;"><i
+                  class="fa fa-commenting" style="color:white;font-size:14px;"></i> Comment</button>
+            <div id='comment-box '
+               style="width: 1000px; height:300px; margin-left:100px;background-color:whitesmoke;margin-top:10px;">
+               <div>
+                  <textarea type="text" id="comments-type"
+                     style="width: 900px; height:90px;margin-left:40px; margin-top:30px;"
+                     placeholder="Type your comments here"></textarea></br>
+                  <button
+                     style="font-size:14px;width:78px;font-family: 'Segoe UI', 'Roboto', arial, sans-serif;padding:5px;border:none;background-color:#3b9bf5; color:white;margin-top:8px;margin-left:865px;"
+                     type="button">Ok</button></br>
+                  <span
+                     style="color:white;">____________________________________________________________________________________________________________________________________________________________________________</span>
+               </div>
+            </div>
+            <div>
+
+            </div>
+         </div>
+      </div>
+      {% endfor %}
+   </div>
+
+   </div>
+
+   <Style>
+      body[class='wholebody'] {
+         font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+         font-size: 14;
+         margin: 0px;
+         padding: 0px;
+         overflow: hidden;
+      }
+
+      ::-webkit-scrollbar {
+         width: 8px;
+         cursor: pointer;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+         box-shadow: inset 0 0 5px #3b9bf5;
          border-radius: 4px;
          cursor: pointer;
-            }
- 
-       /* Handle */
-        ::-webkit-scrollbar-thumb {
-        background: #3b9bf5; 
-        border-radius: 4px;
-        cursor: pointer;
-         }
+      }
 
-        /* Handle on hover */
-       ::-webkit-scrollbar-thumb:hover {
-         background:#3b9bf5;
-         cursor:pointer;
-        }
-         ::placeholder {
-             color:#bfbfbf;
-             opacity: 1; /* Firefox */
-             font-family:'Segoe UI', 'Roboto', arial, sans-serif;        
-             font-size: 15px;
-             font-style:'Segoe UI', 'Roboto', arial, sans-serif;
-          }
-                         
-        :-ms-input-placeholder { /* Internet Explorer 10-11 */
-            color: #bfbfbf;
-            font-family: 'Segoe UI', 'Roboto', arial, sans-serif; 
-            font-size:20px;
-              }
-        ::-ms-input-placeholder { /* Microsoft Edge */
-            color: #bfbfbf;
-            font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
-            font-size: 20px;
-            font-style: 'Segoe UI', 'Roboto', arial, sans-serif;
-            } 
-      </Style.
-  </body>
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+         background: #3b9bf5;
+         border-radius: 4px;
+         cursor: pointer;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+         background: #3b9bf5;
+         cursor: pointer;
+      }
+
+      ::placeholder {
+         color: #bfbfbf;
+         opacity: 1;
+         /* Firefox */
+         font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+         font-size: 15px;
+         font-style: 'Segoe UI', 'Roboto', arial, sans-serif;
+      }
+
+      :-ms-input-placeholder {
+         /* Internet Explorer 10-11 */
+         color: #bfbfbf;
+         font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+         font-size: 20px;
+      }
+
+      ::-ms-input-placeholder {
+         /* Microsoft Edge */
+         color: #bfbfbf;
+         font-family: 'Segoe UI', 'Roboto', arial, sans-serif;
+         font-size: 20px;
+         font-style: 'Segoe UI', 'Roboto', arial, sans-serif;
+      }
+   </Style>
+
+</body>
+
 </html>
